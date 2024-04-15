@@ -1,0 +1,66 @@
+body{
+  font-family: 'Satisfy', cursive;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+header{
+  background-color: rosybrown;
+  /*padding: 8px 0;*/
+}
+
+header h1 {
+  color: rgb(89, 89, 89);
+  font-size: 40 px;
+  font-weight: 100;
+  display: inline-block;
+  /*position: relative;
+  bottom: 60px;
+  margin-left: 10px;*/
+  margin-top: 50px;
+  margin-right: 300px;
+}
+
+
+
+nav{
+  background-color: turquoise;
+  margin-bottom: 20px;
+}
+
+nav ul{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+nav ul li{
+  flex-grow: 1;
+}
+
+nav ul li a{
+  color: rgb(89, 89, 89);
+  text-decoration: none;
+  padding: 3px 6px;
+  display: block;
+  text-align: center;
+}
+
+nav ul li a:hover {
+  background-color: rgb(176, 240, 234);
+}
+
+nav ul li a.activo{
+  background-color: rgb(176, 240, 234);
+}
+
+
+footer{
+  background-color:rgb(223, 223, 102);
+  clear: both;
+  color: rgb(89, 89, 89);
+  text-align: center;
+  padding: 5px 0;
+  margin-top: 20px;
+}

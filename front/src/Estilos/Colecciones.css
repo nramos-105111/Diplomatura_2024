@@ -1,0 +1,17 @@
+/*colecciones html*/
+.somos{
+    font-size: 19px;
+    font-weight: 900;
+}
+
+.coleccion{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap:10px;
+}
+
+.coleccion img{
+    max-width: 100%;
+    height: 500px;
+    object-fit: cover;
+}

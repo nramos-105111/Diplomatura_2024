@@ -1,0 +1,29 @@
+form{
+    margin: auto;
+    width: 90%;
+    max-width: 400px;
+    padding: 4.5em 3em;
+    text-align:left;
+    margin-top: 3em;
+    display:grid;
+    gap: 1em;
+    grid-template-columns: 1fr;
+  }
+  
+  .form-group{
+  position: relative;
+  font-size: large;
+  grid-column: span 2;
+  }
+  
+  .form-control{
+    width: 100%;
+    font-size:larger;
+  }
+  
+  textarea {
+    resize:vertical;
+    overflow: auto;
+    vertical-align: top;
+    width: 100%;
+  }
