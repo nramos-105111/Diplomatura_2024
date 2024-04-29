@@ -24,7 +24,7 @@ router.get('/logout', function(req, res, next) {
       req.session.id_usuario = data.cl_id;
       req.session.nombre = data.cl_usuario;
 
-        res.redirect('/admin/novedades');
+        res.redirect('/admin/shop');
     }else {
         res.render('admin/login',{
                 layout: 'admin/layout',

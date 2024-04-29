@@ -1,0 +1,55 @@
+<header class="hd-logout">
+    <div class="header-content">
+        <p class="text-md">Bienvenido(a) {{persona}}</p>
+        <a class="btn btn-outline-dark btn-sm" href="/admin/login/logout">
+            Cerrar Sesión
+            <i class="fas fa-sign-out-alt"></i> 
+        </a>
+    </div>
+</header>
+
+<div class="row">
+    <div class="col-7">
+   <h1>LISTA DE PRODUCTOS</h1>
+    </div>
+    <div class="COL-5 text-end">
+        <a class="btn btn-success" href="/admin/productos/agregar"><i class="fa fa-plus" aria-hidden="true"></i>
+        NUEVO</a>
+    </div>
+</div>
+{{!--tabla--}}
+<div class="row">
+    <div class="col">
+        <table class="table">
+       <thead>
+        <tr class="table-dark">
+            <th scope="col">#</th>
+            <th scope="col">Descripcion</th>
+            <th scope="col">Precio</th>
+            <th scope="col">Cantidad</th>
+            <th scope="col">imagen</th>
+            <th scope="text-end">Acciones</th>
+        </tr>
+       </thead>
+       <tbody>
+{{#each producto}}
+
+        <tr>
+            <th scope="row">{{pr_id}}</th>
+            <td>{{pr_descripcion}}</td>
+            <td>{{pr_precio}}</td>
+            <td>{{pr_cantidad}}</td>
+            <td>{{magen}}</td>
+            <td class="text-end">
+                <a class="btn btn-secondary" href="">
+                    <i class="fa fa-pencil" aria-hidden="true"></i></a>
+                <a class="btn btn-secondary" href="">
+                    <i class="fa fa-trash" aria-hidden="true"></i></a>
+            </td>
+        </tr>
+        {{/each}}
+       </tbody>
+        </table>
+    </div>
+
+</div>
