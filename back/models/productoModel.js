@@ -17,4 +17,28 @@ async function insertProductos(obj){
     }
 }
 
-module.exports = {getProductos, insertProductos }
+
+async function eliminarproductoById(id){
+    var query = 'delete from producto where pr_id=?';
+    var rows = await pool.query(query, [id]);
+    return rows;
+}
+
+async function getProductosId(id){
+    var query = 'select * from producto where pr_id=?';
+    var rows = await  pool.query(query,[id]);
+    return rows[0];
+}
+
+async function modificarProductoId(obj,id){
+    try {
+        var query = 'update producto set ?  where pr_id=?';
+        var rows = await pool.query(query, [obj,id]);
+        return rows;
+    } catch (error) {
+        throw error;
+    }
+}
+
+
+module.exports = {getProductos, insertProductos, eliminarproductoById,getProductosId,modificarProductoId}

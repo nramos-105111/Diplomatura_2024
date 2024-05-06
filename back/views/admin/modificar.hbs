@@ -1,0 +1,29 @@
+        <div class="container" style="margin:100px auto">
+            <div class="row">
+                <div class="col-6 offset-3">
+
+        <h4>Agregar producto</h4>
+        <form action="/admin/productos/modificar" method="post">
+        <input type="hidden" value="{{producto.pr_id}}" name="id">
+      <div class="form-group">
+        <label for="descripcion">Descripcion</label>
+        <input type="text" class="form-control"  placeholder="Ingresar descripcion" name="descripcion" value="{{producto.pr_descripcion}}">
+      </div>
+      <div class="form-group">
+        <label for="precio">Precio</label>
+        <input type="precio" class="form-control"  placeholder="Ingrese Precio" name="precio" value="{{producto.pr_precio}}">
+      </div>
+      <div class="form-group">
+        <label for="cantidad">cantidad</label>
+        <input type="cantidad" class="form-control"  placeholder="Ingrese Cantidad" name="cantidad" value="{{producto.pr_cantidad}}">
+      </div>
+
+      <button type="submit" class="btn btn-primary">Modificar</button>
+    </form>
+    {{#if error}}
+    <p>{{message}}</p>
+    {{/if}}
+                </div>
+
+            </div>
+        </div>
