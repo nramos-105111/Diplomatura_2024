@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 29-04-2024 a las 03:11:57
+-- Tiempo de generación: 19-05-2024 a las 02:26:01
 -- Versión del servidor: 8.2.0
 -- Versión de PHP: 8.2.13
 
@@ -62,25 +62,27 @@ CREATE TABLE IF NOT EXISTS `producto` (
   `pr_precio` double NOT NULL,
   `pr_cantidad` int NOT NULL,
   `pr_img` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `pr_stock_max` int NOT NULL,
-  `pr_stock_min` int NOT NULL,
   PRIMARY KEY (`pr_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=26 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `producto`
 --
 
-INSERT INTO `producto` (`pr_id`, `pr_descripcion`, `pr_precio`, `pr_cantidad`, `pr_img`, `pr_stock_max`, `pr_stock_min`) VALUES
-(1, 'Hoodie Flores', 12000, 10, '', 0, 0),
-(2, 'Hoodie Rosa', 12000, 15, '', 0, 0),
-(3, 'Hoodie Arcoiris', 12000, 5, '', 0, 0),
-(4, 'Pijama Skelleton', 15000, 7, '', 0, 0),
-(5, '', 0, 0, '', 0, 0),
-(6, 'Campera Blanca', 15000, 6, '', 0, 0),
-(7, 'prueba', 0, 0, '', 0, 0),
-(8, 'campera perro', 0, 0, '', 0, 0),
-(9, 'remera perro', 5000, 15, '', 0, 0);
+INSERT INTO `producto` (`pr_id`, `pr_descripcion`, `pr_precio`, `pr_cantidad`, `pr_img`) VALUES
+(15, 'Hoodie flores', 15000, 15, 'swqxfopcl0t8irby5dte'),
+(2, 'Hoodie Rosa', 12000, 15, 'muhpgomzerltmfcfzpqg'),
+(3, 'Hoodie Arcoiris', 12000, 5, 'd2ssgdllainlxod86hpe'),
+(4, 'Pijama Skelleton', 15000, 7, 'quv0purzqgl1wu2pqpfa'),
+(19, 'Remera Gamer', 10000, 10, 'd28j3dx9bvtj5qsrceun'),
+(18, 'Remera Dino', 10000, 10, 'dfzu5btbmzl6wjpjodox'),
+(17, 'Jogger Black', 15000, 10, 'mtqlcff3os8xapxvyukd'),
+(16, 'Jeans Buttleflies', 25000, 10, 'ia4qkz9nvcodf3tboxoy'),
+(20, 'Remera space', 10000, 10, 'cdjcah4wopa4ujrr9413'),
+(22, 'Vestido Puntos', 20000, 5, 'xqrffjw1ztpfvjoz8nb2'),
+(23, 'Vestido Butterflies', 20000, 5, 't2ewsrm9xrqeeqotmbiz'),
+(24, 'Vestido Rosa', 20000, 5, 'sntorv57w6ddecpn9dl2'),
+(25, 'Medias Homero', 5000, 10, 'hqh1ypxjavobsh2dhvd5');
 
 -- --------------------------------------------------------
 

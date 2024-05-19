@@ -28,126 +28,18 @@
 </header>
     
 
-
 <div class="contenedor-img">
-        <div class="item">
-            <figure>
-                <img src="../images/hoodie-flower.jpg" class="img-s" alt="producto"/>
-            </figure>
-            <div class="info-item">
-                <h2>Hoodie Flores</h2>
-                <p class="precio">$12.000</p>
-                <button class="bn">Lo quiero!</button>
-            </div>
-        </div>
-        <div class="item">
-            <figure>
-                <img src="../images/hoodie-pink.jpg" class="img-s" alt="producto"/>
-            </figure>
-            <div class="info-item">
-                <h2>Hoodie Rosa</h2>
-                <p class="precio">$12.000</p>
-                <button class="bn">Lo quiero!</button>
-            </div>
-        </div>
-        <div class="item">
-            <figure>
-                <img src="../images/hoodie-rain.jpg" class="img-s" alt="producto"/>
-            </figure>
-            <div class="info-item">
-                <h2>Hoodie Arcoiris</h2>
-                <p class="precio">$12.000</p>
-                <button class="bn">Lo quiero!</button>
-            </div>
-        </div>
-        <div class="item">
-            <figure>
-                <img src="../images/jean-buttl.jpg" class="img-s" alt="producto"/>
-            </figure>
-            <div class="info-item">
-                <h2>Jean Mariposas</h2>
-                <p class="precio">$8.000</p>
-                <button class="bn">Lo quiero!</button>
-            </div>
-        </div>
-        <div class="item">
-            <figure>
-                <img src="../images/jogger-black.jpg" class="img-s" alt="producto"/>
-            </figure>
-            <div class="info-item">
-                <h2>Jogger negro</h2>
-                <p class="precio">$9.000</p>
-                <button class="bn">Lo quiero!</button>
-            </div>
-        </div>
-        <div class="item">
-            <figure>
-                <img src="../images/pijama-skel.jpg" class="img-s" alt="producto"/>
-            </figure>
-            <div class="info-item">
-                <h2>Pijama Skeletton</h2>
-                <p class="precio">$15.000</p>
-                <button class="bn">Lo quiero!</button>
-            </div>  
-        </div>
-        <div class="item">
-            <figure>
-                <img src="../images/shirt-dino.jpg" class="img-s" alt="producto"/>
-            </figure>
-            <div class="info-item">
-                <h2>Remera Dino</h2>
-                <p class="precio">$6.000</p>
-                <button class="bn">Lo quiero!</button>
-            </div>
-        </div>
-        <div class="item">
-            <figure>
-                <img src="../images/shirt-game.jpg" class="img-s" alt="producto"/>
-            </figure>
-            <div class="info-item">
-                <h2>Remera Gamer</h2>
-                <p class="precio">$6.000</p>
-                <button class="bn">Lo quiero!</button>
-            </div>
-        </div>
-        <div class="item">
-            <figure>
-                <img src="../images/shirt-space.jpg" class="img-s" alt="producto"/>
-            </figure>
-            <div class="info-item">
-                <h2>Remera Espacio</h2>
-                <p class="precio">$6.000</p>
-                <button class="bn">Lo quiero!</button>
-            </div>
-        </div>
-        <div class="item">
-            <figure>
-                <img src="../images/vest-blue.jpg" class="img-s" alt="producto"/>
-            </figure>
-            <div class="info-item">
-                <h2>Vestido azul</h2>
-                <p class="precio">$16.000</p>
-                <button class="bn">Lo quiero!</button>
-            </div>
-        </div>
-        <div class="item">
-            <figure>
-                <img src="../images/vest-buttle.jpg" class="img-s" alt="producto"/>
-            </figure>
-            <div class="info-item">
-                <h2>Vestido Mariposas</h2>
-                <p class="precio">$16.000</p>
-                <button class="bn">Lo quiero!</button>
-            </div>
-        </div>
-        <div class="item">
-            <figure>
-                <img src="../images/vest-pink.jpg" class="img-s" alt="producto"/>
-            </figure>
-            <div class="info-item">
-                <h2>Vestido Rosa</h2>
-                <p class="precio">$16.000</p>
-                <button class="bn">Lo quiero!</button>
-            </div>
-        </div>
+{{#each productos}}
+<div class="item">
+    <figure>
+         {{{imagen}}}
+    </figure>
+    <div class="info-item">
+        <h2>{{pr_descripcion}}</h2>
+        <p class="precio">Precio: ${{pr_precio}}</p>
+        <p class="cantidad">Cantidad: {{pr_cantidad}}</p>
+
     </div>
+</div>
+{{/each}}
+</div>

@@ -1,129 +1,63 @@
 import '../App.css'
 import '../Estilos/Shop.css'
-const Shop = (props)=>{
-    return (
-        <div class="contenedor-img">
-        <div class="item">
-            <figure>
-                <img src="img/hoodie-flower.jpg" class="img-s" alt="producto"/>
-            </figure>
-            <div class="info-item">
-                <h2>Hoodie Flores</h2>
-                <p class="precio">$12.000</p>
-                <button class="bn">Lo quiero!</button>
-            </div>
-        </div>
-        <div class="item">
-            <figure>
-                <img src="img/hoodie-pink.jpg" class="img-s" alt="producto"/>
-            </figure>
-            <div class="info-item">
-                <h2>Hoodie Rosa</h2>
-                <p class="precio">$12.000</p>
-                <button class="bn">Lo quiero!</button>
-            </div>
-        </div>
-        <div class="item">
-            <figure>
-                <img src="img/hoodie-rain.jpg" class="img-s" alt="producto"/>
-            </figure>
-            <div class="info-item">
-                <h2>Hoodie Arcoiris</h2>
-                <p class="precio">$12.000</p>
-                <button class="bn">Lo quiero!</button>
-            </div>
-        </div>
-        <div class="item">
-            <figure>
-                <img src="img/jean-buttl.jpg" class="img-s" alt="producto"/>
-            </figure>
-            <div class="info-item">
-                <h2>Jean Mariposas</h2>
-                <p class="precio">$8.000</p>
-                <button class="bn">Lo quiero!</button>
-            </div>
-        </div>
-        <div class="item">
-            <figure>
-                <img src="img/jogger-black.jpg" class="img-s" alt="producto"/>
-            </figure>
-            <div class="info-item">
-                <h2>Jogger negro</h2>
-                <p class="precio">$9.000</p>
-                <button class="bn">Lo quiero!</button>
-            </div>
-        </div>
-        <div class="item">
-            <figure>
-                <img src="img/pijama-skel.jpg" class="img-s" alt="producto"/>
-            </figure>
-            <div class="info-item">
-                <h2>Pijama Skeletton</h2>
-                <p class="precio">$15.000</p>
-                <button class="bn">Lo quiero!</button>
-            </div>  
-        </div>
-        <div class="item">
-            <figure>
-                <img src="img/shirt-dino.jpg" class="img-s" alt="producto"/>
-            </figure>
-            <div class="info-item">
-                <h2>Remera Dino</h2>
-                <p class="precio">$6.000</p>
-                <button class="bn">Lo quiero!</button>
-            </div>
-        </div>
-        <div class="item">
-            <figure>
-                <img src="img/shirt-game.jpg" class="img-s" alt="producto"/>
-            </figure>
-            <div class="info-item">
-                <h2>Remera Gamer</h2>
-                <p class="precio">$6.000</p>
-                <button class="bn">Lo quiero!</button>
-            </div>
-        </div>
-        <div class="item">
-            <figure>
-                <img src="img/shirt-space.jpg" class="img-s" alt="producto"/>
-            </figure>
-            <div class="info-item">
-                <h2>Remera Espacio</h2>
-                <p class="precio">$6.000</p>
-                <button class="bn">Lo quiero!</button>
-            </div>
-        </div>
-        <div class="item">
-            <figure>
-                <img src="img/vest-blue.jpg" class="img-s" alt="producto"/>
-            </figure>
-            <div class="info-item">
-                <h2>Vestido azul</h2>
-                <p class="precio">$16.000</p>
-                <button class="bn">Lo quiero!</button>
-            </div>
-        </div>
-        <div class="item">
-            <figure>
-                <img src="img/vest-buttle.jpg" class="img-s" alt="producto"/>
-            </figure>
-            <div class="info-item">
-                <h2>Vestido Mariposas</h2>
-                <p class="precio">$16.000</p>
-                <button class="bn">Lo quiero!</button>
-            </div>
-        </div>
-        <div class="item">
-            <figure>
-                <img src="img/vest-pink.jpg" class="img-s" alt="producto"/>
-            </figure>
-            <div class="info-item">
-                <h2>Vestido Rosa</h2>
-                <p class="precio">$16.000</p>
-                <button class="bn">Lo quiero!</button>
-            </div>
-        </div>
-    </div>
-    )
+import { useState, useEffect } from "react";
+import axios from 'axios';
+import ProductoItem from "../Componentes/Novedades/ProductoItem";
+
+
+
+
+
+const Shop = ({ carrito, setCarrito })=>{
+    const [loading, setLoading] = useState(false);
+    const [producto, setProductos] = useState([]);
+
+
+    useEffect(()=>{
+        const  cargaProductos = async () =>{
+            setLoading(true);
+            const response = await axios.get('http://localhost:3000/api/productos');
+            setProductos(response.data);
+            setLoading(false);
+        };
+    
+        cargaProductos();
+    },[]);
+    
+
+
+    
+      const agregarAlCarrito = (producto) => {
+        const nuevoCarrito = [...carrito, producto];
+        console.log("Nuevo carrito en Shop.js:", nuevoCarrito); // Agregar esta línea para depuración
+        setCarrito(nuevoCarrito);
+        localStorage.setItem("carrito", JSON.stringify(nuevoCarrito));
+      };
+
+        return(
+            <section className="contenedor-img">
+
+      {
+        loading ?(
+            <p>Cargando..</p>
+            
+        ):(
+            
+           producto.map(item => <ProductoItem key={item.pr_id}
+                descripcion={item.pr_descripcion}
+                precio={item.pr_precio}
+                cantidad={item.pr_cantidad}
+                imagen={item.imagen}
+                agregarAlCarrito={agregarAlCarrito} // Pasa la función agregarAlCarrito como prop
+                producto={item} // Pasa el producto como prop
+                />)
+    
+        )
+      }
+      </section>
+        );
+
+
+
 }
 export default Shop;

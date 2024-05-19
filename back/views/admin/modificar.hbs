@@ -3,7 +3,7 @@
                 <div class="col-6 offset-3">
 
         <h4>Agregar producto</h4>
-        <form action="/admin/productos/modificar" method="post">
+        <form action="/admin/productos/modificar" method="post" enctype="multipart/form-data">
         <input type="hidden" value="{{producto.pr_id}}" name="id">
       <div class="form-group">
         <label for="descripcion">Descripcion</label>
@@ -16,6 +16,14 @@
       <div class="form-group">
         <label for="cantidad">cantidad</label>
         <input type="cantidad" class="form-control"  placeholder="Ingrese Cantidad" name="cantidad" value="{{producto.pr_cantidad}}">
+      </div>
+            <div class="form-group">
+        <label for="imagen">Imagen:<input type="file" class="form-control"  placeholder="Carga de imagen" name="imagen" value="{{producto.pr_imagen}}">
+        </label>
+        <p>
+          <label><input type="checkbox"  name="img_delete" id="img_delete" value="1">Eliminar imagen?</label>
+          <input type="hidden" name="img_original" value="{{producto.pr_img}}">
+        </p>
       </div>
 
       <button type="submit" class="btn btn-primary">Modificar</button>

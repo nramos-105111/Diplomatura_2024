@@ -5,6 +5,12 @@
             Cerrar Sesión
             <i class="fas fa-sign-out-alt"></i> 
         </a>
+
+        <a class="btn btn-outline-dark btn-sm" href="/admin/shop">
+            Volver Shop
+            <i class="fas fa-sign-out-alt"></i> 
+        </a>
+
     </div>
 </header>
 
@@ -39,7 +45,7 @@
             <td>{{pr_descripcion}}</td>
             <td>{{pr_precio}}</td>
             <td>{{pr_cantidad}}</td>
-            <td>{{magen}}</td>
+            <td>{{{imagen}}}</td>
             <td class="text-end">
                 <a class="btn btn-secondary" href="/admin/productos/modificar/{{pr_id}}">
                     <i class="fa fa-pencil" aria-hidden="true"></i></a>
